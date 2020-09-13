@@ -88,9 +88,8 @@ function addEventListenerForCells() {
                     turnApplyUI(i, j)
                     checkIfGameHasEnded(logicBoardArray)
                     isXTurn = !isXTurn
-                    if (isSinglePlayer) {
-                        AITurn(logicBoardArray)
-                    }
+                    if (isSinglePlayer) 
+                       setTimeout(function(){AITurn(logicBoardArray)},150)
                 }
             })
 }
