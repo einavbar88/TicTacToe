@@ -292,7 +292,8 @@ function regularTurn(logicBoardArray) {
         if (board[1][1].toString() === 'X' ||
             board[2][1].toString() === 'X' && (board[0][0].toString() === board[2][1].toString() || board[0][1].toString() === board[2][1].toString()) ||
             board[1][0].toString() === 'X' && (board[1][0].toString() === board[0][2].toString() || board[1][0].toString() === board[2][1].toString() ||
-            board[1][0].toString() === board[2][2].toString()) || (board[2][0].toString() === 'X' && board[2][0].toString() === board[1][2].toString()))
+            board[1][0].toString() === board[2][2].toString()) || (board[1][2].toString() === 'X' && (board[2][0].toString() === board[1][2].toString() ||
+            board[2][1].toString() === board[1][2].toString())))
                 return [2, 0]
         if (board[1][0].toString() === 'X' && (board[1][0].toString() === board[0][2].toString() || board[1][0].toString() === board[0][1].toString()) ||
         board[0][1].toString() === 'X' && (board[0][1].toString() === board[1][2].toString() || board[0][1].toString() === board[2][2].toString()))
