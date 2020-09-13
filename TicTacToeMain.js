@@ -89,7 +89,7 @@ function addEventListenerForCells() {
                     checkIfGameHasEnded(logicBoardArray)
                     isXTurn = !isXTurn
                     if (isSinglePlayer) 
-                       setTimeout(function(){AITurn(logicBoardArray)},150)
+                        setTimeout(function(){AITurn(logicBoardArray)},150)
                 }
             })
 }
@@ -290,10 +290,10 @@ function regularTurn(logicBoardArray) {
     let board = logicBoardArray
     if (turnNumber === 3) {
         if (board[1][1].toString() === 'X' ||
-            board[2][1].toString() === 'X' && (board[0][0].toString() === board[2][1].toString() || board[0][1].toString() === board[2][1].toString()) ||
+            board[2][1].toString() === 'X' && (board[0][0].toString() === board[2][1].toString() || board[0][1].toString() === board[2][1].toString() ||
+            board[2][1].toString() === board[1][2].toString() || board[2][1].toString() === board[0][2].toString()) ||
             board[1][0].toString() === 'X' && (board[1][0].toString() === board[0][2].toString() || board[1][0].toString() === board[2][1].toString() ||
-            board[1][0].toString() === board[2][2].toString()) || (board[1][2].toString() === 'X' && (board[2][0].toString() === board[1][2].toString() ||
-            board[2][1].toString() === board[1][2].toString())))
+            board[1][0].toString() === board[2][2].toString()) || (board[1][2].toString() === 'X' && board[2][0].toString() === board[1][2].toString()))
                 return [2, 0]
         if (board[1][0].toString() === 'X' && (board[1][0].toString() === board[0][2].toString() || board[1][0].toString() === board[0][1].toString()) ||
         board[0][1].toString() === 'X' && (board[0][1].toString() === board[1][2].toString() || board[0][1].toString() === board[2][2].toString()))
@@ -301,7 +301,7 @@ function regularTurn(logicBoardArray) {
         if ((board[0][0].toString() === 'X' && board[2][2].toString() === 'X') || (board[2][0].toString() === 'X' && board[0][2].toString() === 'X'))
             return [1, 0]
     }
-        for (let i = 0; i < 3; i++) 
+    for (let i = 0; i < 3; i++) 
         for (let j = 0; j < 3; j++) 
            if(board[i][j].isEmpty)
                 return [i, j]
